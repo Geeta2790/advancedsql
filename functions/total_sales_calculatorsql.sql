@@ -1,0 +1,1 @@
+CREATE OR REPLACE FUNCTION calculate_total_sales(category_id INT) RETURNS NUMERIC AS $$ SELECT SUM(price) FROM products WHERE category_id = category_id; $$ LANGUAGE SQL;
