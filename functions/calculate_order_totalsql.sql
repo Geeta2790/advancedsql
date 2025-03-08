@@ -1,0 +1,1 @@
+CREATE FUNCTION calculate_total_price(order_id INT) RETURNS DECIMAL(10, 2) BEGIN DECLARE total_price DECIMAL(10, 2); SELECT SUM(price * quantity) INTO total_price FROM order_items WHERE order_id = order_id; RETURN total_price; END;
