@@ -1,0 +1,1 @@
+CREATE VIEW active_users AS SELECT user_id, username, last_login FROM users WHERE last_login > NOW() - INTERVAL '30 days';
