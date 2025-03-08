@@ -1,1 +1,1 @@
-CREATE OR REPLACE FUNCTION calculate_total_sales(category_id INT) RETURNS NUMERIC AS $$ SELECT SUM(price) FROM products WHERE category_id = category_id; $$ LANGUAGE SQL;
+CREATE FUNCTION calculate_total_sales(start_date DATE, end_date DATE) RETURNS DECIMAL(10, 2) AS $$ BEGIN RETURN (SELECT SUM(amount) FROM sales WHERE sale_date BETWEEN start_date AND end_date); END; $$ LANGUAGE plpgsql;
