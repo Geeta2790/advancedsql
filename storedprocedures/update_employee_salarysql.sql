@@ -1,0 +1,1 @@
+CREATE PROCEDURE UpdateEmployeeSalary(IN emp_id INT, IN new_salary DECIMAL(10, 2)) BEGIN UPDATE employees SET salary = new_salary WHERE id = emp_id; END;
